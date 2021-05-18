@@ -23,7 +23,7 @@ public class DruidDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		log.info(dataSource.toString());
+		log.info("DruidDemoApplication run() 方法" + dataSource.toString());
 	}
 }
 
