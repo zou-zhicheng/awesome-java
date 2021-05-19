@@ -313,7 +313,192 @@ pom.xml
 
 # 第5章: 数据访问进阶
 
-## demo 1 - 
+## demo 1 - simple-reactor-demo
+
+## demo 2 - redis-demo
+
+pom.xml
+
+```xml
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+		</dependency>
+```
+
+## demo 3 - mongodb-demo
+
+pom.xml
+
+```xml
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+		</dependency>
+```
+
+## demo 4 - simple-r2dbc-demo
+
+spring Milestone的依赖不在主仓库里
+
+```xml
+	<repositories>
+		<repository>
+			<id>spring-milestone</id>
+			<name>Spring Maven MILESTONE Repository</name>
+			<url>http://repo.spring.io/libs-milestone</url>
+		</repository>
+	</repositories>
+```
+
+## demo 5 - r2dbc-repository-demo
+
+## demo 6 - performance-aspect-demo
+
+p6spy
+
+
+
+## demo 7 - reactive-springbucks
+
+# 第6章: Web哪些事
+
+## demo 1 - simple-controller-demo
+
+idea中有rest插件
+
+## demo 2 - context-hierarchy-demo
+
+spring的应用程序上下文
+
+## demo 3 - complex-controller-demo
+
+## demo 4 - more-complex-controller-demo
+
+```java
+    @PostMapping(path = "/", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<Coffee> batchAddCoffee(@RequestParam("file") MultipartFile file) {
+    	...
+    }
+```
+
+上传文件
+
+使用postman,  body -> form-data -> 填入key -> 选择文件
+
+## demo 5 - json-view-demo
+
+```xml
+		<!-- 增加Jackson的Hibernate类型支持 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-hibernate5</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+		<!-- 增加Jackson XML支持 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+```
+
+```java
+@PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+```
+
+序列化
+
+```java
+@JsonComponent
+```
+
+## demo 6 - thymeleaf-view-demo
+
+模版引擎
+
+CoffeeOrderController.java
+
+```java
+    @GetMapping(path = "/")
+    public ModelAndView showCreateForm() {
+        return new ModelAndView("create-order-form");
+    }
+```
+
+
+
+## demo 7 - cache-demo
+
+静态资源与缓存
+
+如何使用，如何看出来缓存了
+
+## demo 8 - exception-demo
+
+异常处理
+
+## demo 9 - springbucks
+
+# 第7章: 访问web资源
+
+## demo 1 - simple-resttemplate-demo
+
+RestTemplate
+
+## demo 2 - complex-resttemplate-demo
+
+RestTemplate高阶用法
+
+## demo 3 - advanced-resttemplate-demo
+
+简单定制RestTemplate
+
+## demo 4 - webclient-demo
+
+通过WebClient访问web资源
+
+## demo 5 - customer-service
+
+# 第8章: Web开发进阶
+
+## demo 1 - hateoas-waiter-service
+
+# 第10章: 运行中的spring boot
+
+## docker-demo
+
+依次执行如下命令
+
+```shell
+mvn clean package -Dmaven.test.skip
+
+# 执行命令会找到springbucks/waiter-server
+docker images
+
+# 执行镜像
+docker run --name waiter-service -d -p 8080:8080 springbucks/waiter-service:0.0.1-SNAPSHOT
+
+# 观察日志
+docker logs
+docker ps
+
+# 测试
+curl http://localhost:8080/coffee/1
+
+# 推到仓库中去
+docker deploy xxx
+```
+
+# 第11章: Spring Cloud云原生应用
+
+
+
+# 第12章: 服务发现与注册
+
+
 
 # Docker
 
