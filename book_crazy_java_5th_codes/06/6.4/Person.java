@@ -43,17 +43,20 @@ public class Person
 	private final Name name;
 	public Person(Name name)
 	{
-//		this.name = name;
+		// this.name = name;
 		// 设置name实例变量为临时创建的Name对象，该对象的firstName和lastName
 		// 与传入的name参数的firstName和lastName相同
+		// JamesZOU: this.name与实参中传过来的name没有联系了
 		this.name = new Name(name.getFirstName(), name.getLastName());
 	}
 	public Name getName()
 	{
-//		return name;
+		// return name;
+		// return this.name;
 		// 返回一个匿名对象，该对象的firstName和lastName
 		// 与该对象里的name的firstName和lastName相同
 		return new Name(name.getFirstName(), name.getLastName());
+		// return new Name(this.name.getFirstName(), this.name.getLastName());
 	}
 	public static void main(String[] args)
 	{

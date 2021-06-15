@@ -12,6 +12,7 @@
  */
 public enum Operation
 {
+	// 定义每个枚举值时必须为抽象方法提供实现， 否则将出现编译错误。
 	PLUS
 	{
 		public double eval(double x, double y)

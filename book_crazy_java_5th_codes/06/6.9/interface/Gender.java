@@ -17,6 +17,8 @@ public enum Gender implements GenderDesc
 	// 此处的枚举值必须调用对应构造器来创建
 	MALE("男")
 	// 花括号部分实际上是一个类体部分
+	// 如果需要每个枚举值在调用同一个方法时呈现出不同的行为方式， 则可以让每个枚举值分别来实现该方法， 
+	// 每个枚举值提供不同的实现方式， 从而让不同枚举值调用同一个方法时具有不同的行为方式。
 	{
 		public void info()
 		{
@@ -41,10 +43,10 @@ public enum Gender implements GenderDesc
 	{
 		return this.name;
 	}
-//	// 增加下面的info()方法，实现GenderDesc接口必须实现的方法
-//	public void info()
-//	{
-//		System.out.println(
-//			"这是一个用于用于定义性别的枚举类");
-//	}
+	// 增加下面的info()方法，实现GenderDesc接口必须实现的方法
+	public void info()
+	{
+		System.out.println(
+			"这是一个用于用于定义性别的枚举类");
+	}
 }

@@ -16,6 +16,7 @@ import java.lang.annotation.*;
 // 定义一个简单的类型注解，不带任何成员变量
 @Target(ElementType.TYPE_USE)
 @interface NotNull{}
+
 // 定义类时使用类型注解
 @NotNull
 public class TypeAnnotationTest

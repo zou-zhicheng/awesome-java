@@ -1,32 +1,40 @@
-<?xml version="1.0" encoding="GBK" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2018-12-11T22:52:52.844516300Z</date>
-  <millis>1544568772844</millis>
-  <nanos>516300</nanos>
+  <date>2021-06-04T22:53:01.510842Z</date>
+  <millis>1622847181510</millis>
+  <nanos>842000</nanos>
   <sequence>0</sequence>
   <logger>fkjava</logger>
-  <level>INFO</level>
-  <class>LoggerI18N</class>
+  <level>FINE</level>
+  <class>LoggerTest</class>
   <method>main</method>
   <thread>1</thread>
-  <message>普通信息</message>
-  <key>info</key>
-  <catalog>logMess</catalog>
+  <message>debug淇℃伅</message>
 </record>
 <record>
-  <date>2018-12-11T22:52:52.916520400Z</date>
-  <millis>1544568772916</millis>
-  <nanos>520400</nanos>
+  <date>2021-06-04T22:53:01.535945Z</date>
+  <millis>1622847181535</millis>
+  <nanos>945000</nanos>
   <sequence>1</sequence>
   <logger>fkjava</logger>
-  <level>SEVERE</level>
-  <class>LoggerI18N</class>
+  <level>INFO</level>
+  <class>LoggerTest</class>
   <method>main</method>
   <thread>1</thread>
-  <message>错误信息</message>
-  <key>error</key>
-  <catalog>logMess</catalog>
+  <message>info淇℃伅</message>
+</record>
+<record>
+  <date>2021-06-04T22:53:01.615487Z</date>
+  <millis>1622847181615</millis>
+  <nanos>487000</nanos>
+  <sequence>2</sequence>
+  <logger>fkjava</logger>
+  <level>SEVERE</level>
+  <class>LoggerTest</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>error淇℃伅</message>
 </record>
 </log>

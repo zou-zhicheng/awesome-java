@@ -12,6 +12,9 @@ import java.util.*;
  */
 public class ErrorUtils
 {
+	// A programmer assertion that the body of the annotated method or
+	// constructor does not perform potentially unsafe operations on its
+	// varargs parameter. 
 	@SafeVarargs
 	public static void faultyMethod(List<String>... listStrArray)
 	{

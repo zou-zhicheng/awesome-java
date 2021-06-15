@@ -55,6 +55,7 @@ class CalTask extends RecursiveTask<Integer>
 		}
 	}
 }
+
 public class Sum
 {
 	public static void main(String[] args)

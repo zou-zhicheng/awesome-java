@@ -29,10 +29,12 @@ public class FinalLocalVariableTest
 		// 第一次赋初始值，成功
 		d = 5.6;
 		// 对final变量重复赋值，下面语句非法
-//		d = 3.4;
+		// d = 3.4;
 		FinalLocalVariableTest test = new FinalLocalVariableTest();
-		// final int a = 18;
-		int a = 18;
+		// 打印18
+		final int a = 18;
+		// 打印18
+		// int a = 18;
 		test.test(a);
 	}
 }

@@ -27,6 +27,16 @@ public class CreateStaticInnerInstance
 	public static void main(String[] args)
 	{
 		StaticOut.StaticIn in = new StaticOut.StaticIn();
+		
+		// 这样使用在编译的时候报错
+		// CreateStaticInnerInstance.java:30: 错误: 找不到符号
+		// StaticOut.StaticIn in = StaticOut.new StaticIn();
+		//                         ^
+		// 符号:   变量 StaticOut
+		// 位置: 类 CreateStaticInnerInstance
+		// 1 个错误
+		// StaticOut.StaticIn in = StaticOut.new StaticIn();
+
 		/*
 		上面代码可改为如下两行代码：
 		使用OuterClass.InnerClass的形式定义内部类变量

@@ -29,6 +29,16 @@ public class ThirdThread
 			// call()方法可以有返回值
 			return i;
 		});
+		FutureTask<Integer> task2 = new FutureTask<>((Callable<Integer>)() -> {
+			var i = 0;
+			for ( ; i < 100; i++)
+			{
+				System.out.println(Thread.currentThread().getName()
+					+ " 的循环变量i的值：" + i);
+			}
+			// call()方法可以有返回值
+			return i;
+		});
 		for (var i = 0; i < 100; i++)
 		{
 			System.out.println(Thread.currentThread().getName()
@@ -39,12 +49,15 @@ public class ThirdThread
 				new Thread(task, "有返回值的线程").start();
 				// JamesZOU测试, 加上下面这条并没有执行
 				// new Thread(task, "线程2").start();
+				// JamesZOU: 再新建一个task,就可以执行
+				new Thread(task2, "有返回值的线程2").start();
 			}
 		}
 		try
 		{
 			// 获取线程返回值
 			System.out.println("子线程的返回值：" + task.get());
+			System.out.println("子线程2的返回值：" + task2.get());
 		}
 		catch (Exception ex)
 		{

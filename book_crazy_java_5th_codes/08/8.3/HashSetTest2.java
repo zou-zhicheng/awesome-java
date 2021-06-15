@@ -54,8 +54,10 @@ public class HashSetTest2
 		// 为第一个元素的count实例变量赋值
 		first.count = -3;     // ①
 		// 再次输出HashSet集合，集合元素有重复元素
+		// JamesZOU: set不是不允许有重复元素吗？
 		System.out.println(hs);
 		// 删除count为-3的R对象
+		// JamesZOU: 到底删除的是哪一个count为-3的R对象呢？
 		hs.remove(new R(-3));    // ②
 		// 可以看到被删除了一个R元素
 		System.out.println(hs);

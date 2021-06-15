@@ -22,7 +22,7 @@ public class StaticInnerClassTest
 		{
 			// 下面代码出现错误：
 			// 静态内部类无法访问外部类的实例变量
-//			System.out.println(prop1);
+			// System.out.println(prop1);
 			// 下面代码正常
 			System.out.println(prop2);
 		}

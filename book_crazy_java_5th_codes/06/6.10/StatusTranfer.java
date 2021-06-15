@@ -16,6 +16,7 @@ public class StatusTranfer
 	{
 		var a = new String("轻量级Java EE企业应用实战"); // ①
 		a = new String("疯狂Java讲义");   // ②
+		System.out.println(a);
 	}
 	public static void main(String[] args)
 	{

@@ -17,9 +17,11 @@ public class ArrayErr
 		// 定义一个Integer数组
 		Integer[] ia = new Integer[5];
 		// 可以把一个Integer[]数组赋给Number[]变量
-		Number[] na = ia;
+		// Number[] na = ia;
 		// 下面代码编译正常，但运行时会引发ArrayStoreException异常
 		// 因为0.5并不是Integer
+		// Exception in thread "main" java.lang.ArrayStoreException: java.lang.Double
+		// at ArrayErr.main(ArrayErr.java:24)
 		na[0] = 0.5;   // ①
 
 

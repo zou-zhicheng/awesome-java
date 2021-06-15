@@ -2,7 +2,7 @@
 import java.util.*;
 /**
  * Description:
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a><br>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a><br>
  * Copyright (C), 2001-2020, Yeeku.H.Lee<br>
  * This program is protected by copyright laws.<br>
  * Program Name:<br>
@@ -15,22 +15,24 @@ public class TreeSetTest
 	public static void main(String[] args)
 	{
 		var nums = new TreeSet();
-		// ÏòTreeSetÖĞÌí¼ÓËÄ¸öInteger¶ÔÏó
+		// å‘TreeSetä¸­æ·»åŠ å››ä¸ªIntegerå¯¹è±¡
 		nums.add(5);
 		nums.add(2);
 		nums.add(10);
 		nums.add(-9);
-		// Êä³ö¼¯ºÏÔªËØ£¬¿´µ½¼¯ºÏÔªËØÒÑ¾­´¦ÓÚÅÅĞò×´Ì¬
+		// è¾“å‡ºé›†åˆå…ƒç´ ï¼Œçœ‹åˆ°é›†åˆå…ƒç´ å·²ç»å¤„äºæ’åºçŠ¶æ€
 		System.out.println(nums);
-		// Êä³ö¼¯ºÏÀïµÄµÚÒ»¸öÔªËØ
-		System.out.println(nums.first()); // Êä³ö-9
-		// Êä³ö¼¯ºÏÀïµÄ×îºóÒ»¸öÔªËØ
-		System.out.println(nums.last());  // Êä³ö10
-		// ·µ»ØĞ¡ÓÚ4µÄ×Ó¼¯£¬²»°üº¬4
-		System.out.println(nums.headSet(4)); // Êä³ö[-9, 2]
-		// ·µ»Ø´óÓÚ5µÄ×Ó¼¯£¬Èç¹ûSetÖĞ°üº¬5£¬×Ó¼¯ÖĞ»¹°üº¬5
-		System.out.println(nums.tailSet(5)); // Êä³ö [5, 10]
-		// ·µ»Ø´óÓÚµÈÓÚ-3£¬Ğ¡ÓÚ4µÄ×Ó¼¯¡£
-		System.out.println(nums.subSet(-3, 4)); // Êä³ö[2]
+		// è¾“å‡ºé›†åˆé‡Œçš„ç¬¬ä¸€ä¸ªå…ƒç´ 
+		System.out.println(nums.first()); // è¾“å‡º-9
+		// è¾“å‡ºé›†åˆé‡Œçš„æœ€åä¸€ä¸ªå…ƒç´ 
+		System.out.println(nums.last());  // è¾“å‡º10
+		// è¿”å›å°äº4çš„å­é›†ï¼Œä¸åŒ…å«4
+		System.out.println(nums.headSet(4)); // è¾“å‡º[-9, 2]
+		// è¿”å›å°äº2çš„å­é›†ï¼Œä¸åŒ…å«2
+		System.out.println(nums.headSet(2)); // è¾“å‡º[-9]
+		// è¿”å›å¤§äº5çš„å­é›†ï¼Œå¦‚æœSetä¸­åŒ…å«5ï¼Œå­é›†ä¸­è¿˜åŒ…å«5
+		System.out.println(nums.tailSet(5)); // è¾“å‡º [5, 10]
+		// è¿”å›å¤§äºç­‰äº-3ï¼Œå°äº4çš„å­é›†ã€‚
+		System.out.println(nums.subSet(-3, 4)); // è¾“å‡º[2]
 	}
 }

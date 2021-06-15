@@ -1,0 +1,73 @@
+
+import java.util.*;
+/**
+ * Description:
+ * 网站: <a href="http://www.crazyit.org">疯狂Java联盟</a><br>
+ * Copyright (C), 2001-2020, Yeeku.H.Lee<br>
+ * This program is protected by copyright laws.<br>
+ * Program Name:<br>
+ * Date:<br>
+ * @author Yeeku.H.Lee kongyeeku@163.com
+ * @version 5.0
+ */
+class R
+{
+	int count;
+	public R(int count)
+	{
+		this.count = count;
+	}
+	public String toString()
+	{
+		return "R[count:" + count + "]";
+	}
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj != null && obj.getClass() == R.class)
+		{
+			var r = (R) obj;
+			return this.count == r.count;
+		}
+		return false;
+	}
+	public int hashCode()
+	{
+		return this.count;
+	}
+}
+public class HashSetTest3
+{
+	public static void main(String[] args)
+	{
+		var hs = new HashSet();
+		R r1 = new R(5);
+		hs.add(r1);
+		R r2 = new R(-3);
+		hs.add(r2);
+		R r3 = new R(9);
+		hs.add(r3);
+		R r4 = new R(-2);
+		hs.add(r4);
+		// 打印HashSet集合，集合元素没有重复
+		System.out.println(hs);
+		// 取出第一个元素
+		var it = hs.iterator();
+		var first = (R) it.next();
+		// 为第一个元素的count实例变量赋值
+		first.count = -3;     // ①
+		// 再次输出HashSet集合，集合元素有重复元素
+		// JamesZOU: set不是不允许有重复元素吗？
+		System.out.println(hs);
+		// 删除count为-3的R对象
+		// JamesZOU: 到底删除的是哪一个count为-3的R对象呢？删除的是最原始的r2对应的那个-3元素
+		hs.remove(new R(-3));    // ②
+		// 可以看到被删除了一个R元素
+		System.out.println(hs);
+		System.out.println("hs是否包含count为5的R对象？" + hs.contains(r1)); // 输出true
+		System.out.println("hs是否包含count为-3的R对象？" + hs.contains(r2)); // 输出false
+		System.out.println("hs是否包含count为9的R对象？" + hs.contains(r3)); // 输出true
+		System.out.println("hs是否包含count为-2的R对象？" + hs.contains(r4)); // 输出false
+	}
+}

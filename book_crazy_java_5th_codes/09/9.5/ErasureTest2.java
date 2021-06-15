@@ -21,6 +21,9 @@ public class ErasureTest2
 		// 下面代码引起“未经检查的转换”的警告，编译、运行时完全正常
 		List<String> ls = list;     // ①
 		// 但只要访问ls里的元素，如下面代码将引起运行时异常。
+		// Exception in thread "main" java.lang.ClassCastException: 
+		// class java.lang.Integer cannot be cast to class java.lang.String (java.lang.Integer and java.lang.String are in module java.base of loader 'bootstrap')
+		// at ErasureTest2.main(ErasureTest2.java:24)
 		System.out.println(ls.get(0));
 	}
 }

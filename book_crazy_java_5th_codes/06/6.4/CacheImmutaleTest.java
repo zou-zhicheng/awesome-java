@@ -18,6 +18,7 @@ class CacheImmutale
 		= new CacheImmutale[MAX_SIZE];
 	// 记录缓存实例在缓存中的位置,cache[pos-1]是最新缓存的实例
 	private static int pos = 0;
+	// 注意这里final变量是在构造函数中初始化的
 	private final String name;
 	private CacheImmutale(String name)
 	{

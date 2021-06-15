@@ -31,6 +31,6 @@ public class GenericConstructor
 		new <String> Foo("疯狂Android讲义");
 		// 显式指定泛型构造器中的T类型为String，
 		// 但传给Foo构造器的实参是Double对象，下面代码出错
-//		new <String> Foo(12.3);
+		// new <String> Foo(12.3);
 	}
 }

@@ -27,12 +27,12 @@ public class FileChannelTest
 			// 将FileChannel里的全部数据映射成ByteBuffer
 			MappedByteBuffer buffer = inChannel.map(FileChannel
 				.MapMode.READ_ONLY, 0, f.length());   // ①
-			// 使用GBK的字符集来创建解码器
-			Charset charset = Charset.forName("GBK");
 			// 直接将buffer里的数据全部输出
 			outChannel.write(buffer);     // ②
 			// 再次调用buffer的clear()方法，复原limit、position的位置
 			buffer.clear();
+			// 使用GBK的字符集来创建解码器
+			Charset charset = Charset.forName("GBK");
 			// 创建解码器(CharsetDecoder)对象
 			CharsetDecoder decoder = charset.newDecoder();
 			// 使用解码器将ByteBuffer转换成CharBuffer

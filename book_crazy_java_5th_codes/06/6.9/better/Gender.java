@@ -25,7 +25,7 @@ public enum Gender
 				}
 				else
 				{
-					System.out.println("˛ÎĘý´íÎó");
+					System.out.println("不能更换性别 男");
 					return;
 				}
 				break;
@@ -36,7 +36,7 @@ public enum Gender
 				}
 				else
 				{
-					System.out.println("˛ÎĘý´íÎó");
+					System.out.println("不能更换性别 女");
 					return;
 				}
 				break;

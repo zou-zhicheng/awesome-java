@@ -12,6 +12,9 @@ import java.util.*;
  */
 public class TreeSetErrorTest2
 {
+	// 运行时报错
+	// Exception in thread "main" java.lang.ClassCastException: 
+	// class Err cannot be cast to class java.lang.Comparable (Err is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
 	public static void main(String[] args)
 	{
 		var ts = new TreeSet();

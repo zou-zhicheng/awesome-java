@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-04T22:55:02.764014Z</date>
+  <millis>1622847302764</millis>
+  <nanos>14000</nanos>
+  <sequence>0</sequence>
+  <logger>fkjava</logger>
+  <level>INFO</level>
+  <class>LoggerI18N</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>国际化普通信息</message>
+  <key>info</key>
+  <catalog>logMess</catalog>
+</record>
+<record>
+  <date>2021-06-04T22:55:02.840001Z</date>
+  <millis>1622847302840</millis>
+  <nanos>1000</nanos>
+  <sequence>1</sequence>
+  <logger>fkjava</logger>
+  <level>SEVERE</level>
+  <class>LoggerI18N</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>国际化错误信息</message>
+  <key>error</key>
+  <catalog>logMess</catalog>
+</record>
+</log>

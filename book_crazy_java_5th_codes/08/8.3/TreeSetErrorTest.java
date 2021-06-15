@@ -2,7 +2,7 @@
 import java.util.*;
 /**
  * Description:
- * 网站: <a href="http://www.crazyit.org">疯狂Java联盟</a><br>
+ * 缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a><br>
  * Copyright (C), 2001-2020, Yeeku.H.Lee<br>
  * This program is protected by copyright laws.<br>
  * Program Name:<br>
@@ -16,8 +16,8 @@ public class TreeSetErrorTest
 	public static void main(String[] args)
 	{
 		var ts = new TreeSet();
-		// 向TreeSet集合中添加Err对象
-		// 自然排序时，Err没实现Comparable接口将会引发错误
+		// 鍚慣reeSet闆嗗悎涓坊鍔燛rr瀵硅薄
+		// 鑷劧鎺掑簭鏃讹紝Err娌″疄鐜癈omparable鎺ュ彛灏嗕細寮曞彂閿欒
 		ts.add(new Err());
 	}
 }

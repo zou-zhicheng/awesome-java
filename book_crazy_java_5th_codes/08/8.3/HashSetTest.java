@@ -51,6 +51,7 @@ public class HashSetTest
 		books.add(new B());
 		books.add(new C());
 		books.add(new C());
+		// [B@1, B@1, C@2, A@515f550a, A@6504e3b2]
 		System.out.println(books);
 	}
 }

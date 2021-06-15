@@ -29,6 +29,6 @@ public class EqualTest
 			+ (str1.equals(str2)));
 		// 由于java.lang.String与EqualTest类没有继承关系，
 		// 所以下面语句导致编译错误
-//		System.out.println("hello" == new EqualTest());
+		// System.out.println("hello" == new EqualTest());
 	}
 }

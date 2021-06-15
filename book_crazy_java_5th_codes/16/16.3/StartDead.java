@@ -44,6 +44,9 @@ public class StartDead extends Thread
 			{
 				System.out.println("再次启动线程");
 				// 试图再次启动该线程
+				// Exception in thread "main" java.lang.IllegalThreadStateException
+				// at java.base/java.lang.Thread.start(Thread.java:794)
+				// at StartDead.main(StartDead.java:47)
 				sd.start();
 			}
 		}

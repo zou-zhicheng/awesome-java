@@ -70,6 +70,6 @@ public class ThreadLocalTest
 		线程访问同一个账户时看到不同的账户名。
 		*/
 		new MyTest(at, "线程甲").start();
-		new MyTest(at, "线程乙").start ();
+		new MyTest(at, "线程乙").start();
 	}
 }

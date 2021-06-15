@@ -30,6 +30,8 @@ public class CharsetTransform
 		// 将CharBuffer中的字符序列转换成字节序列
 		ByteBuffer bbuff = cnEncoder.encode(cbuff);
 		// 循环访问ByteBuffer中的每个字节
+		// -53 -17 -50 -14 -65 -43
+		// JamesZOU: 这里为什么值是负数?
 		for (var i = 0; i < bbuff.capacity(); i++)
 		{
 			System.out.print(bbuff.get(i) + " ");

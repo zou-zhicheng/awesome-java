@@ -28,8 +28,12 @@ public class InferenceTest
 	public static void main(String[] args)
 	{
 		// 可以通过方法赋值的目标参数来推断类型参数为String
+		// E: String
+		// Z: String
 		MyUtil<String> ls = MyUtil.nil();
 		// 无需使用下面语句在调用nil()方法时指定类型参数的类型
+		// E: String
+		// MyUtil.<String>nil() -> Z:String
 		MyUtil<String> mu = MyUtil.<String>nil();
 		// 可调用cons方法所需的参数类型来推断类型参数为Integer
 		MyUtil.cons(42, MyUtil.nil());

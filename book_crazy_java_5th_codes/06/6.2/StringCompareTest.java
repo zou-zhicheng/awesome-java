@@ -30,9 +30,12 @@ public class StringCompareTest
 		// 使用new调用构造器将会创建一个新的String对象，
 		// s7引用堆内存中新创建的String对象
 		var s7 = new String("疯狂Java");
+		var s8 = new String("疯狂Java");
 		System.out.println(s1 == s4); // 输出true
 		System.out.println(s1 == s5); // 输出true
 		System.out.println(s1 == s6); // 输出false
 		System.out.println(s1 == s7); // 输出false
+		System.out.println(s6 == s7); // 输出false
+		System.out.println(s7 == s8); // 输出false
 	}
 }

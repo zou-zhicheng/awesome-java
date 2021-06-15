@@ -37,17 +37,27 @@ public class GenericMethodTest
 		var na = new Number[100];
 		Collection<Number> cn = new ArrayList<>();
 		// 下面代码中T代表Number类型
+		// ia Integer
+		// cn Number
 		fromArrayToCollection(ia, cn);
 		// 下面代码中T代表Number类型
+		// fa Float
+		// cn Number
 		fromArrayToCollection(fa, cn);
 		// 下面代码中T代表Number类型
+		// na Number
+		// cn Number
 		fromArrayToCollection(na, cn);
 		// 下面代码中T代表Object类型
+		// na Number
+		// co Object
 		fromArrayToCollection(na, co);
 		// 下面代码中T代表String类型，但na是一个Number数组，
 		// 因为Number既不是String类型，
 		// 也不是它的子类，所以出现编译错误
-//		fromArrayToCollection(na, cs);
+		// na Number
+		// cs String
+		// fromArrayToCollection(na, cs);
 	}
 }
 

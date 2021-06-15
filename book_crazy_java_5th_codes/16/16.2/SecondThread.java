@@ -36,6 +36,8 @@ public class SecondThread implements Runnable
 			{
 				var st = new SecondThread();     // ①
 				// 通过new Thread(target, name)方法创建新线程
+				// 可以多个线程共享同一个target对象， 所以非常适合多个相同线程来处理同一份资源的情况， 
+				// 从而可以将CPU，代码和数据分开， 形成清晰的模型， 较好地体现了面向对象的思想
 				new Thread(st, "新线程1").start();
 				new Thread(st, "新线程2").start();
 			}

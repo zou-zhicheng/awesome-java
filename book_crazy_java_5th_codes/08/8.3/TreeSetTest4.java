@@ -2,7 +2,7 @@
 import java.util.*;
 /**
  * Description:
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a><br>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a><br>
  * Copyright (C), 2001-2020, Yeeku.H.Lee<br>
  * This program is protected by copyright laws.<br>
  * Program Name:<br>
@@ -26,12 +26,12 @@ public class TreeSetTest4
 {
 	public static void main(String[] args)
 	{
-		// ´Ë´¦Lambda±í´ïÊ½µÄÄ¿±êÀàĞÍÊÇComparator
+		// æ­¤å¤„Lambdaè¡¨è¾¾å¼çš„ç›®æ ‡ç±»å‹æ˜¯Comparator
 		var ts = new TreeSet((o1, o2) ->
 		{
 			var m1 = (M) o1;
 			var m2 = (M) o2;
-			// ¸ù¾İM¶ÔÏóµÄageÊôĞÔÀ´¾ö¶¨´óĞ¡£¬ageÔ½´ó£¬M¶ÔÏó·´¶øÔ½Ğ¡
+			// æ ¹æ®Må¯¹è±¡çš„ageå±æ€§æ¥å†³å®šå¤§å°ï¼Œageè¶Šå¤§ï¼ŒMå¯¹è±¡åè€Œè¶Šå°
 			return m1.age > m2.age ? -1
 				: m1.age < m2.age ? 1 : 0;
 		});

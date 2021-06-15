@@ -17,6 +17,7 @@ public class ScannerKeyBoardTest
 		// System.in代表标准输入，就是键盘输入
 		var sc = new Scanner(System.in);
 		// 增加下面一行将只把回车作为分隔符
+		// JamesZOU: 默认好像也是使用回车做为分隔符
 		// sc.useDelimiter("\n");
 		// 判断是否还有下一个输入项
 		while (sc.hasNext())

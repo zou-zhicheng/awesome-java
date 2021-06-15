@@ -19,7 +19,7 @@ public class AnnoymousDiamond
 	public static void main(String[] args)
 	{
 		// 指定Foo类中泛型为String
-		Foo<String> f = new Foo<>()
+		Foo<String> f1 = new Foo<>()
 		{
 			// test()方法的参数类型为String
 			public void test(String t)
@@ -27,8 +27,9 @@ public class AnnoymousDiamond
 				System.out.println("test方法的t参数为：" + t);
 			}
 		};
+		f1.test("f1");
 		// 使用泛型通配符，此时相当于通配符的上限为Object
-		Foo<?> fo = new Foo<>()
+		Foo<?> f2 = new Foo<>()
 		{
 			// test()方法的参数类型为Object
 			public void test(Object t)
@@ -36,8 +37,9 @@ public class AnnoymousDiamond
 				System.out.println("test方法的Object参数为：" + t);
 			}
 		};
+		// f2.test(new String("f2"));
 		// 使用泛型通配符，通配符的上限为Number
-		Foo<? extends Number> fn = new Foo<>()
+		Foo<? extends Number> f3 = new Foo<>()
 		{
 			// 此时test()方法的参数类型为Number
 			public void test(Number t)
@@ -45,5 +47,6 @@ public class AnnoymousDiamond
 				System.out.println("test方法的Number参数为：" + t);
 			}
 		};
+		// f3.test(Integer.valueOf(3));
 	}
 }

@@ -9,6 +9,7 @@
  * @version 1.0
  */
 
+ // 函数式接口
 @FunctionalInterface
 interface Displayable
 {
@@ -19,6 +20,7 @@ interface Displayable
 		return a + b;
 	}
 }
+
 public class LambdaAndInner
 {
 	private int age = 12;
@@ -33,7 +35,7 @@ public class LambdaAndInner
 			System.out.println("外部类的age实例变量为：" + age);
 			System.out.println("外部类的name类变量为：" + name);
 			// 尝试调用接口中的默认方法，编译器会报错
-//			System.out.println(add(3, 5));
+			// System.out.println(add(3, 5));
 		};
 		dis.display();
 		// 调用dis对象从接口中继承的add()方法

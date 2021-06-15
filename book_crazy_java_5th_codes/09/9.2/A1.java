@@ -18,12 +18,21 @@ public class A1 extends Apple<String>
 	{
 		return "子类" + super.getInfo();
 	}
-	/*
+	
 	// 下面方法是错误的，重写父类方法时返回值类型不一致
-	public Object getInfo()
-	{
-		return "子类";
-	}
-	*/
+	// public Object getInfo()
+	// {
+	// 	return "子类";
+	// }
+	
+	// 下面方法也报错
+	// A1.java:28: 错误: 已在类 A1中定义了方法 getInfo()
+	// public String getInfo()
+	//               ^
+	// 1 个错误
+	// public String getInfo()
+	// {
+	// 	return "子类";
+	// }
 }
 

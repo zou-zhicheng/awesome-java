@@ -2,7 +2,7 @@
 import java.util.*;
 /**
  * Description:
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a><br>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a><br>
  * Copyright (C), 2001-2020, Yeeku.H.Lee<br>
  * This program is protected by copyright laws.<br>
  * Program Name:<br>
@@ -22,7 +22,7 @@ class R implements Comparable
 	{
 		return "R[count:" + count + "]";
 	}
-	// ÖØĞ´equals·½·¨£¬¸ù¾İcountÀ´ÅĞ¶ÏÊÇ·ñÏàµÈ
+	// é‡å†™equalsæ–¹æ³•ï¼Œæ ¹æ®countæ¥åˆ¤æ–­æ˜¯å¦ç›¸ç­‰
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -36,7 +36,7 @@ class R implements Comparable
 		}
 		return false;
 	}
-	// ÖØĞ´compareTo·½·¨£¬¸ù¾İcountÀ´±È½Ï´óĞ¡
+	// é‡å†™compareToæ–¹æ³•ï¼Œæ ¹æ®countæ¥æ¯”è¾ƒå¤§å°
 	public int compareTo(Object obj)
 	{
 		var r = (R) obj;
@@ -53,23 +53,24 @@ public class TreeSetTest3
 		ts.add(new R(-3));
 		ts.add(new R(9));
 		ts.add(new R(-2));
-		// ´òÓ¡TreeSet¼¯ºÏ£¬¼¯ºÏÔªËØÊÇÓĞĞòÅÅÁĞµÄ
-		System.out.println(ts);    // ¢Ù
-		// È¡³öµÚÒ»¸öÔªËØ
+		// æ‰“å°TreeSeté›†åˆï¼Œé›†åˆå…ƒç´ æ˜¯æœ‰åºæ’åˆ—çš„
+		System.out.println(ts);    // â‘ 
+		// å–å‡ºç¬¬ä¸€ä¸ªå…ƒç´ 
 		var first = (R) ts.first();
-		// ¶ÔµÚÒ»¸öÔªËØµÄcount¸³Öµ
+		// å¯¹ç¬¬ä¸€ä¸ªå…ƒç´ çš„countèµ‹å€¼
 		first.count = 20;
-		// È¡³ö×îºóÒ»¸öÔªËØ
-		var last = (R) ts.last();
-		// ¶Ô×îºóÒ»¸öÔªËØµÄcount¸³Öµ£¬ÓëµÚ¶ş¸öÔªËØµÄcountÏàÍ¬
-		last.count = -2;
-		// ÔÙ´ÎÊä³ö½«¿´µ½TreeSetÀïµÄÔªËØ´¦ÓÚÎŞĞò×´Ì¬£¬ÇÒÓĞÖØ¸´ÔªËØ
-		System.out.println(ts);   // ¢Ú
-		// É¾³ıÊµÀı±äÁ¿±»¸Ä±äµÄÔªËØ£¬É¾³ıÊ§°Ü
-		System.out.println(ts.remove(new R(-2)));   // ¢Û
 		System.out.println(ts);
-		// É¾³ıÊµÀı±äÁ¿Ã»ÓĞ±»¸Ä±äµÄÔªËØ£¬É¾³ı³É¹¦
-		System.out.println(ts.remove(new R(5)));    // ¢Ü
+		// å–å‡ºæœ€åä¸€ä¸ªå…ƒç´ 
+		var last = (R) ts.last();
+		// å¯¹æœ€åä¸€ä¸ªå…ƒç´ çš„countèµ‹å€¼ï¼Œä¸ç¬¬äºŒä¸ªå…ƒç´ çš„countç›¸åŒ
+		last.count = -2;
+		// å†æ¬¡è¾“å‡ºå°†çœ‹åˆ°TreeSeté‡Œçš„å…ƒç´ å¤„äºæ— åºçŠ¶æ€ï¼Œä¸”æœ‰é‡å¤å…ƒç´ 
+		System.out.println(ts);   // â‘¡
+		// åˆ é™¤å®ä¾‹å˜é‡è¢«æ”¹å˜çš„å…ƒç´ ï¼Œåˆ é™¤å¤±è´¥
+		System.out.println(ts.remove(new R(-2)));   // â‘¢
+		System.out.println(ts);
+		// åˆ é™¤å®ä¾‹å˜é‡æ²¡æœ‰è¢«æ”¹å˜çš„å…ƒç´ ï¼Œåˆ é™¤æˆåŠŸ
+		System.out.println(ts.remove(new R(5)));    // â‘£
 		System.out.println(ts);
 	}
 }

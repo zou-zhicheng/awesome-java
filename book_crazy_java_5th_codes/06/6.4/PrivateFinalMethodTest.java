@@ -25,8 +25,8 @@ class PrivateFinalMethodTest extends PrivateFinalMethodTestSup
 	
 	public static void main(String[] args){
 		// 这样使用会出错, 不能使用test()方法
-		// PrivateFinalMethodTest pt = new Sub();
-		Sub pt = new Sub();
+		// PrivateFinalMethodTestSup pt = new PrivateFinalMethodTest();
+		PrivateFinalMethodTest pt = new PrivateFinalMethodTest();
 		pt.test();
 	}
 }

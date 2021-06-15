@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/03/03.iml" filepath="$PROJECT_DIR$/03/03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04/04.iml" filepath="$PROJECT_DIR$/04/04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05/05.iml" filepath="$PROJECT_DIR$/05/05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06/06.iml" filepath="$PROJECT_DIR$/06/06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07/07.iml" filepath="$PROJECT_DIR$/07/07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08/08.iml" filepath="$PROJECT_DIR$/08/08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09/09.iml" filepath="$PROJECT_DIR$/09/09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10/10.iml" filepath="$PROJECT_DIR$/10/10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11/11.iml" filepath="$PROJECT_DIR$/11/11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12/12.iml" filepath="$PROJECT_DIR$/12/12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13/13.iml" filepath="$PROJECT_DIR$/13/13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14/14.iml" filepath="$PROJECT_DIR$/14/14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15/15.iml" filepath="$PROJECT_DIR$/15/15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/16/16.iml" filepath="$PROJECT_DIR$/16/16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/17/17.iml" filepath="$PROJECT_DIR$/17/17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/18/18.iml" filepath="$PROJECT_DIR$/18/18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06/6.12/6.12.iml" filepath="$PROJECT_DIR$/06/6.12/6.12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/book_crazy_java_5th_codes.iml" filepath="$PROJECT_DIR$/.idea/book_crazy_java_5th_codes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a01/moduleExample/src/org.cimodule/org.cimodule.iml" filepath="$PROJECT_DIR$/a01/moduleExample/src/org.cimodule/org.cimodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a01/moduleService/src/org.cimodule.basic/org.cimodule.basic.iml" filepath="$PROJECT_DIR$/a01/moduleService/src/org.cimodule.basic/org.cimodule.basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a01/moduleService/src/org.cimodule.best/org.cimodule.best.iml" filepath="$PROJECT_DIR$/a01/moduleService/src/org.cimodule.best/org.cimodule.best.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a01/moduleService/src/org.cimodule.senior/org.cimodule.senior.iml" filepath="$PROJECT_DIR$/a01/moduleService/src/org.cimodule.senior/org.cimodule.senior.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a01/moduleDepend/src/org.fkmodule/org.fkmodule.iml" filepath="$PROJECT_DIR$/a01/moduleDepend/src/org.fkmodule/org.fkmodule.iml" />
+    </modules>
+  </component>
+</project>

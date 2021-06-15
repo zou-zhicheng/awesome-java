@@ -23,7 +23,7 @@ public class LoggerI18N
 		// 设置系统日志级别
 		Logger.getLogger("fkjava").setLevel(Level.INFO);
 		// 设置使用a.xml保存日志记录
-		Logger.getLogger("fkjava").addHandler(new FileHandler("a.xml"));
+		Logger.getLogger("fkjava").addHandler(new FileHandler("b.xml"));
 		// 下面3个方法的第二个参数是国际化消息的key
 		logger.log(System.Logger.Level.DEBUG, "debug");
 		logger.log(System.Logger.Level.INFO, "info");

@@ -17,13 +17,13 @@ public class FinalErrorTest
 	final int age;
 	{
 		// age没有初始化，所以此处代码将引起错误。
-		System.out.println(age);
+		// System.out.println(age);
 		printAge();
 		age = 6;
 		System.out.println(age);
 	}
 	public void printAge(){
-		System.out.println(age);
+		System.out.println("in function: " + age);
 	}
 	public static void main(String[] args)
 	{

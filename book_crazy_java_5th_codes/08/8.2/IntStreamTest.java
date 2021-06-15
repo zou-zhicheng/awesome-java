@@ -20,9 +20,10 @@ public class IntStreamTest
 			.add(-2)
 			.add(18)
 			.build();
-		// 下面调用聚集方法的代码每次只能执行一个
-//		System.out.println("is所有元素的最大值：" + is.max().getAsInt());
-//		System.out.println("is所有元素的最小值：" + is.min().getAsInt());
+		// 下面调用聚集方法的代码每次只能执行一个, 否则报错
+		// stream has already been operated upon or closed
+		// System.out.println("is所有元素的最大值：" + is.max().getAsInt());
+		// System.out.println("is所有元素的最小值：" + is.min().getAsInt());
 //		System.out.println("is所有元素的总和：" + is.sum());
 //		System.out.println("is所有元素的总数：" + is.count());
 //		System.out.println("is所有元素的平均值：" + is.average());
