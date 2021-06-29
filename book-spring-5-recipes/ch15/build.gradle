@@ -1,0 +1,152 @@
+description = 'Spring Recipes :: Chapter 15 :: Spring Integration'
+
+subprojects { subproject ->
+
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-messaging'
+        compile group: 'org.springframework.integration', name: 'spring-integration-core'
+
+        // No activemq-all as that includes dependencies we don't want
+        compile group: 'org.apache.activemq', name: 'activemq-broker'
+        compile group: 'org.apache.activemq', name: 'activemq-client'
+        compile group: 'javax.jms', name: 'javax.jms-api'
+    }
+}
+
+// Define project
+project(':ch15:recipe_15_2_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_2_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_3_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_3_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_3_iii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_4_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_5_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+    }
+} // End
+
+
+// Define project
+project(':ch15:recipe_15_5_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_6_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_6_ii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_6_iii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_7_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+        compile group: 'commons-io', name: 'commons-io'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_7_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+        compile group: 'commons-io', name: 'commons-io'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_7_ii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+        compile group: 'commons-io', name: 'commons-io'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_8') {
+    dependencies {
+        // IRC Client
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_9') {
+    dependencies {
+        // IRC Client
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+        compile group: 'org.springframework.batch', name: 'spring-batch-integration'
+    }
+} // End
+
+// Define project
+project(':ch15:recipe_15_10_ii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+    }
+} // End

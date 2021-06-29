@@ -1,0 +1,118 @@
+description = 'Spring Recipes :: Chapter 4 :: Spring REST'
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+subprojects { project ->
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    apply plugin: 'docker'
+
+    defaultTasks 'clean', 'build'
+    war {
+        archiveName='court.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-oxm'
+        compile group: 'org.springframework', name: 'spring-webmvc'
+
+        // Provided Dependencies
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+
+
+    task buildDocker(type: Docker, dependsOn: build) {
+        push = false
+        applicationName = war.archiveName
+        tag = 'spring-recipes-4th/court-rest'
+        tagVersion = 'latest'
+        dockerfile = file('../Dockerfile')
+        doFirst {
+            copy {
+                from war
+                into stageDir
+            }
+        }
+    }
+}
+
+// Define springweb project
+project(':ch04:recipe_4_2_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_2_iii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_2_iv') { project ->
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.google.code.gson', name: 'gson'
+    }
+} // End springweb
+
+
+// Define springweb project
+project(':ch04:recipe_4_3_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_3_ii') {
+    // Define defaulttasks, first clean, then build
+    defaultTasks 'clean', 'build'
+    // Define aditional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.court.Main")
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_3_iii') {
+    // Define defaulttasks, first clean, then build
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.court.Main")
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_4_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.rometools', name: 'rome'
+    }
+} // End springweb

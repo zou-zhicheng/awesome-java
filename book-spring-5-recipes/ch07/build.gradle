@@ -1,0 +1,78 @@
+description = 'Spring Recipes :: Chapter 7 :: Spring Security'
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+
+
+subprojects { subproject ->
+
+    apply plugin: 'war'
+    apply plugin: 'docker'
+
+    defaultTasks 'clean', 'build'
+
+
+    if (!subproject.name.contains("7_8")) {
+        war {
+            archiveName = 'todos.war'
+        }
+
+        dependencies {
+
+            compile group: 'org.springframework', name: 'spring-context'
+            compile group: 'org.springframework', name: 'spring-context-support'
+            compile group: 'org.springframework', name: 'spring-jdbc'
+            compile group: 'org.springframework', name: 'spring-webmvc'
+            compile group: 'org.springframework', name: 'spring-orm'
+
+            compile group: 'org.springframework.security', name: 'spring-security-web'
+            compile group: 'org.springframework.security', name: 'spring-security-config'
+            compile group: 'org.springframework.security', name: 'spring-security-taglibs'
+
+            compile group: 'org.springframework.data', name: 'spring-data-jpa'
+
+            compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
+            compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl'
+
+            compile group: 'net.sf.ehcache', name: 'ehcache'
+
+            compile group: 'org.hibernate', name: 'hibernate-entitymanager'
+            compile group: 'org.hibernate', name: 'hibernate-validator'
+
+            compile group: 'com.h2database', name: 'h2'
+
+            providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+        }
+    }
+    task buildDocker(type: Docker, dependsOn: build) {
+        push = false
+        applicationName = war.archiveName
+        tag = 'sr4/todos-security'
+        tagVersion = 'latest'
+        dockerfile = file('../Dockerfile')
+        doFirst {
+            copy {
+                from war
+                into stageDir
+            }
+        }
+    }
+
+}
+
+project(':ch07:recipe_7_3_v') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.security', name: 'spring-security-ldap'
+        compile group: 'org.springframework.ldap', name: 'spring-ldap-core'
+    }
+}

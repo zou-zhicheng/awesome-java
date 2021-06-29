@@ -1,0 +1,100 @@
+description = 'Spring Recipes :: Chapter 3 :: Spring MVC'
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+project(':ch03:recipe_3_shared') {
+    description='CH03 - Sample Shared Code'
+
+    defaultTasks 'clean', 'build'
+
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+
+        compileOnly group: 'javax.servlet', name: 'javax.servlet-api'
+        compileOnly group: 'javax.validation', name: 'validation-api'
+        compileOnly group: 'org.hibernate', name: 'hibernate-validator'
+    }
+}
+
+subprojects { subproject ->
+    if (!subproject.name.contains('shared')) {
+        // Define usage of war plugin
+        apply plugin: 'war'
+        apply plugin: 'docker'
+
+        // Define defaulttasks, first clean, then build, then war
+        defaultTasks 'clean', 'build'
+        // Define dependencies
+        dependencies {
+            compile project(':ch03:recipe_3_shared')
+            compile group: 'org.springframework', name: 'spring-webmvc'
+            // Add dependencies to add for runtime (these will be included in the WAR, in addition to those in compile group)
+            runtime group: 'javax.servlet', name: 'jstl'
+
+            compileOnly group: 'javax.validation', name: 'validation-api'
+
+            // Provided Dependencies
+            providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+        }
+
+        war { archiveName = 'court.war' }
+
+        task buildDocker(type: Docker, dependsOn: build) {
+            push = false
+            applicationName = war.archiveName
+            tag = 'spring-recipes-4th/court-web'
+            tagVersion = 'latest'
+            dockerfile = file('../Dockerfile')
+            doFirst {
+                copy {
+                    from war
+                    into stageDir
+                }
+            }
+        }
+    }
+}
+
+project(':ch03:recipe_3_9_iv') {
+
+    dependencies {
+        compile group: 'javax.validation', name: 'validation-api'
+    }
+}
+
+project(':ch03:recipe_3_11_i') {
+
+    dependencies {
+        compile group: 'javax.validation', name: 'validation-api'
+        compile group: 'org.hibernate', name: 'hibernate-validator'
+    }
+}
+
+project(':ch03:recipe_3_12_i') {
+
+    dependencies {
+        compile group: 'javax.validation', name: 'validation-api'
+        compile group: 'org.hibernate', name: 'hibernate-validator'
+        compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
+        compile group: 'org.apache.poi', name: 'poi-ooxml'
+    }
+}
+
+project(':ch03:recipe_3_13') {
+
+    dependencies {
+        compile group: 'javax.validation', name: 'validation-api'
+        compile group: 'org.hibernate', name: 'hibernate-validator'
+        compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
+        compile group: 'org.apache.poi', name: 'poi-ooxml'
+    }
+}

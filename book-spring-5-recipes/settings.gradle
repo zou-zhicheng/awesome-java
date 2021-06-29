@@ -1,0 +1,25 @@
+import static groovy.io.FileType.DIRECTORIES
+import static groovy.io.FileVisitResult.SKIP_SUBTREE
+
+def includeDirs = ~/^(?i)(ch|recipe|appendix).*$/
+def preDir = {
+
+    if (!includeDirs.matcher(it.name).matches() || it.name.contains('ch01')) {
+        return SKIP_SUBTREE
+    }
+}
+
+def getProjectName(String dir) {
+    return (dir - (rootDir.toString() + "/")).replaceAll("/", ":")
+}
+
+rootDir.traverse( type: DIRECTORIES, preDir: preDir) { dir ->
+
+    def dstr = dir.toString()
+    def includes = includeDirs.matcher(dir.name).matches()
+
+    if (includes && dir.name.contains('recipe')) {
+        def projectName = getProjectName(dstr)
+        include projectName
+    }
+}

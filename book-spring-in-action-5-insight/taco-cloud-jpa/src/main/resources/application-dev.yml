@@ -1,0 +1,11 @@
+spring:
+  thymeleaf:
+    cache: false
+
+  jpa:
+    show-sql: true
+    # 问题之一 使用 hibernate 或 sql 脚本创建数据库 只能二选一
+    # Make sure to disable spring.jpa.hibernate.ddl-auto if you use schema.sql.
+    # 官方文档: https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-initialize-a-database-using-spring-jdbc
+    hibernate:
+      ddl-auto: none

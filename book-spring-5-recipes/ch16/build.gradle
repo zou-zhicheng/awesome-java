@@ -1,0 +1,281 @@
+description = 'Spring Recipes :: Chapter 16 :: Spring Testing'
+
+subprojects {
+    subproject ->
+        defaultTasks 'clean', 'build'
+
+        task testNG(type: Test) { useTestNG() }
+
+        test.dependsOn testNG
+
+}
+
+
+// Define project
+project("recipe_16_1_i") {
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_1_ii') {
+    // Define dependencies
+    dependencies {
+        testCompile group: 'org.testng', name: 'testng'
+    }
+
+    test {
+        useTestNG()
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_1_iii') {
+
+    // Define dependencies
+    dependencies {
+        testCompile group: 'org.testng', name: 'testng'
+    }
+
+    test {
+        useTestNG()
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_2_i') {
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_2_ii') {
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_2_iii') {
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_2_iv') {
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_3_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_4_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_4_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_4_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_5_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_5_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_5_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_6_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+        compile 'com.h2database:h2:1.4.194'
+
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_6_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+        compile 'com.h2database:h2:1.4.194'
+
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_6_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+        compile 'com.h2database:h2:1.4.194'
+
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_7_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+        compile 'com.h2database:h2:1.4.194'
+
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_7_ii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+        compile 'com.h2database:h2:1.4.194'
+
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_8_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+        compile 'com.h2database:h2:1.4.194'
+
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
+
+        testCompile group: 'junit', name: 'junit'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_8_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
+
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+        testCompile 'com.h2database:h2:1.4.194'
+        testCompileOnly group: 'javax.servlet', name: 'javax.servlet-api'
+
+    }
+} // End
+
+// Define project
+project(':ch16:recipe_16_9_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile 'com.h2database:h2:1.4.194'
+
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
+
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
+        testCompile group: 'org.springframework', name: 'spring-test'
+        testCompileOnly group: 'javax.servlet', name: 'javax.servlet-api'
+
+    }
+} // End

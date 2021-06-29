@@ -1,0 +1,86 @@
+description='Spring Recipes :: Appendix A :: Deployment in the Cloud'
+
+project(':appendix-a:recipe_a_2_i') {
+
+    defaultTasks 'clean','build'
+
+    // Define how to build final JAR for project
+    jar {
+        //The following creates a fat-JAR with all dependencies embedded
+        // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        //Instead use custom task to copy files to lib directory and create a custom manfiest
+        manifest.attributes("Main-Class": "com.apress.springrecipes.cloud.Main")
+    }
+}
+
+project(':appendix-a:recipe_a_3_i') {
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean','build','war'
+    war {
+        archiveName='contact.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-context-support'
+        compile group: 'org.springframework', name: 'spring-webmvc'
+
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl'
+
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+}
+
+project(':appendix-a:recipe_a_3_ii') {
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean','build','war'
+    war {
+        archiveName='contact.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-context-support'
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+
+        compile group: 'com.h2database', name: 'h2'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl'
+
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+}
+
+project(':appendix-a:recipe_a_3_iii') {
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean','build','war'
+    war {
+        archiveName='contact.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-context-support'
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+        compile group: 'org.springframework.cloud', name: 'spring-cloud-cloudfoundry-connector'
+        compile group: 'org.springframework.cloud', name: 'spring-cloud-spring-service-connector'
+
+        compile group: 'com.h2database', name: 'h2'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl'
+
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+}

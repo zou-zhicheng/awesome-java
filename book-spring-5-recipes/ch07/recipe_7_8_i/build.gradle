@@ -1,0 +1,22 @@
+dependencies {
+
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+
+    compile group: 'org.springframework.security', name: 'spring-security-config'
+    compile group: 'org.springframework.security', name: 'spring-security-web'
+    compile group: 'org.springframework', name: 'spring-context'
+    compile group: 'org.springframework', name: 'spring-webflux'
+
+    compile group: 'org.thymeleaf', name: 'thymeleaf-spring5'
+    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
+
+    compile 'io.netty:netty-buffer'
+    compile group: 'io.projectreactor.ipc', name: 'reactor-netty'
+}
+
+war { archiveName = 'court-rx.war' }
+
+buildDocker {
+    tag = 'sr4/court-rx'
+    dockerfile = file('./Dockerfile')
+}

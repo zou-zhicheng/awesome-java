@@ -1,0 +1,108 @@
+buildscript {
+    repositories {
+        maven {
+            jcenter()
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.17.0'
+    }
+}
+
+description='Spring 5 Recipes - Sources'
+
+allprojects {
+    group = 'com.apress.springrecipes'
+
+
+    // Define repositorie to get dependencies
+    repositories {
+        mavenCentral()
+        // Public Spring artifacts
+        maven { url "https://repo.spring.io/release" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/libs-snapshot" }
+        maven { url "https://repo.spring.io/libs-release"}
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    }
+}
+
+subprojects { subproject ->
+
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'com.github.ben-manes.versions'
+
+    ext['spring.version'] = '5.0.4.RELEASE'
+
+    ext['spring-amqp.version'] = '2.0.2.RELEASE'
+    ext['spring-batch.version'] = '4.0.0.RELEASE'
+    ext['spring-data-releasetrain.version'] = 'Kay-SR5'
+    ext['spring-integration.version'] = '5.0.3.RELEASE'
+    ext['spring-mobile.version'] = '2.0.0.BUILD-SNAPSHOT'
+    ext['spring-security.version'] = '5.0.3.RELEASE'
+    ext['spring-social.version'] = '2.0.0.M4'
+    ext['spring-social-twitter.version'] = '2.0.0.M4'
+    ext['spring-social-facebook.version'] = '3.0.0.M3'
+    ext['spring-ws.version'] = '3.0.0.RELEASE'
+
+    ext['apacheCxfVersion'] = '3.2.1'
+    ext['hibernate-validator5.version'] = '6.0.7.Final'
+    ext['neo4jVersion'] = '3.3.0'
+    ext['servlet-api.version'] = '4.0.0'
+    ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
+    ext['thymeleaf.version'] = '3.0.9.RELEASE'
+
+	compileJava.options*.compilerArgs = [ '-Xlint:all', '-Xlint:-processing' ]
+
+	compileTestJava.options*.compilerArgs = ['-Xlint:all', '-Xlint:-processing']
+
+    sourceCompatibility=JavaVersion.VERSION_1_8
+    targetCompatibility=JavaVersion.VERSION_1_8
+
+	configurations {
+		// We want to use SLF4J for logging, ban commons-logging
+		all*.exclude group: 'commons-logging', module: 'commons-logging'
+	}
+
+    dependencyManagement {
+        imports {
+            mavenBom "io.spring.platform:platform-bom:$springIOPlatform"
+        }
+    }
+
+	dependencies {
+		compile("org.slf4j:slf4j-api")
+		compile("org.slf4j:jcl-over-slf4j")
+		compile("ch.qos.logback:logback-classic")
+
+        // To suppress compiler warnings.
+        compileOnly group: 'javax.validation', name: 'validation-api'
+        compileOnly group: 'javax.annotation', name: 'javax.annotation-api'
+        compileOnly group: 'com.google.code.findbugs', name: 'jsr305'
+        // Add dependencies for testing (these will only be used for the testing phase)
+		testCompile("junit:junit")
+		testCompile("org.mockito:mockito-core")
+        testCompile("org.assertj:assertj-core")
+		testCompile("org.springframework:spring-test")
+	}
+
+	task copyDependenciesToLibDir( type: Copy ) {
+		into "$buildDir/libs/lib"
+		from configurations.runtime
+	}
+
+    jar {
+        // Copy jar dependencies and add to Class-Path.
+        dependsOn copyDependenciesToLibDir
+        def deps = fileTree(dir: "$buildDir/libs/lib", include: '*.jar')
+        manifest.attributes("Class-Path": deps.files.collect {'lib/'+it.name}.join(' '))
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
+}

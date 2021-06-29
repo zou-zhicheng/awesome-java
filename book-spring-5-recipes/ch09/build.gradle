@@ -1,0 +1,56 @@
+description = 'Spring Recipes :: Chapter 09 :: Spring Data Access'
+
+subprojects { subproject ->
+
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.postgresql', name: 'postgresql'
+        compile group: 'com.zaxxer', name: 'HikariCP'
+    }
+
+    if (subproject.name.contains('course') || subproject.name.contains('vehicle')) {
+        return
+    }
+
+    if (subproject.name.startsWith('recipe_09_0_')
+            || subproject.name.startsWith('recipe_09_1_')
+            || subproject.name.startsWith('recipe_09_2_')
+            || subproject.name.startsWith('recipe_09_3_')
+            || subproject.name.startsWith('recipe_09_4_')
+            || subproject.name.startsWith('recipe_09_5_')) {
+        // Define dependencies
+        dependencies {
+            compile project(':ch09:recipe_09_vehicle')
+        }
+    } else {
+
+        // Define dependencies
+        dependencies {
+            compile project(':ch09:recipe_09_course')
+        }
+
+    }
+}
+
+project(':ch09:recipe_09_course') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm'
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager'
+    }
+}
+project(':ch09:recipe_09_vehicle') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc'
+    }
+
+}
+
+project(':ch09:recipe_09_10') {
+
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-jpa'
+    }
+}

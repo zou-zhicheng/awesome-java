@@ -1,0 +1,251 @@
+description='Spring Recipes :: Chapter 13 :: Spring NoSQL and BigData'
+
+subprojects { subproject ->
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile 'org.apache.commons:commons-lang3'
+        compile group: 'org.springframework', name: 'spring-expression'
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-context'
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.nosql.Main")
+    }
+
+    repositories {
+
+        maven { url 'http://m2.neo4j.org/content/repositories/snapshots'}
+    }
+}
+
+project(':ch12:recipe_12_1_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb'
+    }
+}
+
+project(':ch12:recipe_12_1_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb'
+    }
+}
+
+project(':ch12:recipe_12_1_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb'
+    }
+}
+
+project(':ch12:recipe_12_1_iv') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb'
+    }
+}
+
+project(':ch12:recipe_12_1_v') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb'
+    }
+}
+
+project(':ch12:recipe_12_1_vi') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.mongodb', name: 'mongodb-driver-reactivestreams', version: '1.3.0'
+        compile group: 'io.projectreactor', name: 'reactor-core'
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb'
+    }
+}
+
+
+project(':ch12:recipe_12_2_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis'
+    }
+}
+
+project(':ch12:recipe_12_2_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis'
+    }
+}
+
+project(':ch12:recipe_12_2_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis'
+    }
+}
+
+project(':ch12:recipe_12_2_iv') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+}
+
+project(':ch12:recipe_12_2_v') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'org.springframework.data', name: 'spring-data-redis'
+    }
+}
+
+project(':ch12:recipe_12_2_vi') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'org.springframework.data', name: 'spring-data-redis'
+    }
+}
+
+project(':ch12:recipe_12_3_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+    }
+}
+
+project(':ch12:recipe_12_3_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+    }
+}
+
+project(':ch12:recipe_12_3_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+    }
+}
+
+project(':ch12:recipe_12_3_iv') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j-ogm-core'
+        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0'
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+        compile group: 'javax.validation', name: 'validation-api'
+    }
+}
+
+project(':ch12:recipe_12_3_v') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j-ogm-core'
+        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0'
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j'
+        compile group: 'javax.validation', name: 'validation-api'
+    }
+}
+
+project(':ch12:recipe_12_3_vi') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j-ogm-core'
+        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0'
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j'
+        compile group: 'javax.validation', name: 'validation-api'
+    }
+}
+
+project(':ch12:recipe_12_3_vii') {
+
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j-ogm-core'
+        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0'
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j'
+        compile group: 'javax.validation', name: 'validation-api'
+    }
+}
+
+
+project(':ch12:recipe_12_4_i') {
+
+    dependencies {
+        compile group: 'com.couchbase.client', name: 'java-client'
+    }
+}
+
+project(':ch12:recipe_12_4_ii') {
+
+    dependencies {
+        compile group: 'com.couchbase.client', name: 'java-client'
+    }
+}
+
+project(':ch12:recipe_12_4_iii') {
+
+    dependencies {
+        compile group: 'com.couchbase.client', name: 'java-client'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+}
+
+project(':ch12:recipe_12_4_iv') {
+
+    dependencies {
+        compile group: 'com.couchbase.client', name: 'java-client'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'org.springframework.data', name: 'spring-data-couchbase'
+    }
+}
+
+project(':ch12:recipe_12_4_v') {
+
+    dependencies {
+        compile group: 'com.couchbase.client', name: 'java-client'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'org.springframework.data', name: 'spring-data-couchbase'
+    }
+}
+
+project(':ch12:recipe_12_4_vi') {
+
+    dependencies {
+        compile group: 'com.couchbase.client', name: 'java-client'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'org.springframework.data', name: 'spring-data-couchbase'
+    }
+}
+
+project(':ch12:recipe_12_4_vii') {
+
+    dependencies {
+        compile group: 'com.couchbase.client', name: 'java-client'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'org.springframework.data', name: 'spring-data-couchbase'
+    }
+}
+
+project(':ch12:recipe_12_4_viii') {
+
+    dependencies {
+        compile group: 'com.couchbase.client', name: 'java-client'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'org.springframework.data', name: 'spring-data-couchbase'
+
+        compile group: 'io.projectreactor', name: 'reactor-core'
+        compile group: 'io.reactivex', name: 'rxjava'
+        compile group: 'io.reactivex', name: 'rxjava-reactive-streams'
+
+    }
+}

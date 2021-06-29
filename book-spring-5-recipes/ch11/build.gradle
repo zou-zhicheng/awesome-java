@@ -1,0 +1,19 @@
+description='Spring 5 Recipes :: Chapter 11 :: Spring Batch'
+
+subprojects { subproject ->
+    defaultTasks 'clean', 'build'
+
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-expression'
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-jdbc'
+
+        compile group: 'org.springframework.batch', name: 'spring-batch-core'
+
+        compile group: 'com.h2database', name: 'h2'
+    }
+
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.springbatch.Main")
+    }
+}

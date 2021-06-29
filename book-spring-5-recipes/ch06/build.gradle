@@ -1,0 +1,91 @@
+description='Spring Recipes :: Chapter 6 :: Spring Social'
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+
+subprojects { subproject ->
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    apply plugin: 'docker'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean','build','war'
+    war {
+        archiveName='social.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-context-support'
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework.social', name: 'spring-social-core'
+        compile group: 'org.springframework.social', name: 'spring-social-config'
+        compile group: 'org.springframework.social', name: 'spring-social-web'
+        compile group: 'org.springframework.social', name: 'spring-social-twitter'
+        compile group: 'org.springframework.social', name: 'spring-social-facebook', version: project.ext['spring-social-facebook.version']
+
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl'
+
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+
+    task buildDocker(type: Docker, dependsOn: build) {
+        push = false
+        applicationName = war.archiveName
+        tag = 'sr4/social'
+        tagVersion = 'latest'
+        dockerfile = file('../Dockerfile')
+        doFirst {
+            copy {
+                from war
+                into stageDir
+            }
+        }
+    }
+
+}
+
+project(':ch06:recipe_6_6_i') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc'
+
+        compile group: 'org.springframework.security', name: 'spring-security-crypto'
+        compile group: 'org.postgresql', name: 'postgresql'
+    }
+
+}
+
+project(':ch06:recipe_6_7_i') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc'
+
+        compile group: 'org.springframework.social', name: 'spring-social-security'
+
+        compile group: 'org.springframework.security', name: 'spring-security-config'
+        compile group: 'org.springframework.security', name: 'spring-security-crypto'
+        compile group: 'org.springframework.security', name: 'spring-security-web'
+        compile group: 'org.postgresql', name: 'postgresql'
+    }
+}
+project(':ch06:recipe_6_7_ii') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc'
+
+        compile group: 'org.springframework.social', name: 'spring-social-security'
+
+        compile group: 'org.springframework.security', name: 'spring-security-config'
+        compile group: 'org.springframework.security', name: 'spring-security-crypto'
+        compile group: 'org.springframework.security', name: 'spring-security-web'
+        compile group: 'org.postgresql', name: 'postgresql'
+    }
+}

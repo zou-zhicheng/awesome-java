@@ -1,0 +1,45 @@
+description = 'Spring Recipes :: Appendix B :: Caching'
+
+subprojects { subproject ->
+
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-context-support'
+        compile group: 'net.sf.ehcache', name: 'ehcache'
+    }
+
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.caching.Main")
+    }
+}
+
+project(':appendix-b:recipe_b_3_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-aspects'
+        compile group: 'org.springframework', name: 'spring-instrument'
+        compile group: 'org.aspectj', name: 'aspectjweaver'
+        compile group: 'org.aspectj', name: 'aspectjrt'
+    }
+} // End
+
+project(':appendix-b:recipe_b_6_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc'
+        compile group: 'com.h2database', name: 'h2'
+    }
+} // End
+
+
+project(':appendix-b:recipe_b_7_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis'
+        compile group: 'org.springframework.data', name: 'spring-data-redis'
+    }
+} // End

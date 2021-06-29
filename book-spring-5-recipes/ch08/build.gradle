@@ -1,0 +1,52 @@
+description='Spring Recipes :: Chapter 8 :: Spring Mobile'
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+subprojects { subproject ->
+
+    apply plugin: 'war'
+    apply plugin: 'docker'
+
+    defaultTasks 'clean','build'
+
+    war {
+        archiveName='mobile.war'
+    }
+
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework.mobile', name: 'spring-mobile-device', version: project.ext['spring-mobile.version']
+
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl'
+
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+
+    task buildDocker(type: Docker, dependsOn: build) {
+        push = false
+        applicationName = war.archiveName
+        tag = 'spring-recipes-4th/mobile'
+        tagVersion = 'latest'
+        dockerfile = file('../Dockerfile')
+        doFirst {
+            copy {
+                from war
+                into stageDir
+            }
+        }
+    }
+
+
+}
+

@@ -1,0 +1,17 @@
+dependencies {
+
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+
+    compile group: 'org.springframework', name: 'spring-webmvc'
+    compile group: 'org.springframework', name: 'spring-websocket'
+
+    compile group: 'javax.websocket', name: 'javax.websocket-api'
+
+}
+
+war { archiveName = 'echo-ws.war' }
+
+buildDocker {
+    tag = 'sr4/echo-ws'
+    dockerfile = file('./Dockerfile')
+}

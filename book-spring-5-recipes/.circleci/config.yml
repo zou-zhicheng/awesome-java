@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "./build.gradle" }}
+      - run: ./gradlew build
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "./build.gradle" }}

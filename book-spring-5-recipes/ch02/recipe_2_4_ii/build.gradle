@@ -1,0 +1,9 @@
+dependencies {
+
+    compile group: 'org.springframework', name: 'spring-context'
+    compile group: 'javax.inject', name: 'javax.inject'
+}
+
+jar {
+    manifest.attributes('Main-Class': 'com.apress.springrecipes.sequence.Main')
+}

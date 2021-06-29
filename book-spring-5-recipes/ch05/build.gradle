@@ -1,0 +1,58 @@
+description = 'Spring Recipes :: Chapter 5 :: Spring MVC - Async'
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+subprojects { subproject ->
+
+    // Define usage of war plugin
+    if (!subproject.name.contains('5_8')) {
+        apply plugin: 'war'
+        apply plugin: 'docker'
+    }
+    apply plugin: 'io.spring.dependency-management'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+
+    if (subproject.name.contains('5_1') || subproject.name.contains('5_2') || subproject.name.contains('5_3')) {
+        dependencies {
+            compile project(':ch03:recipe_3_shared')
+            compile group: 'org.springframework', name: 'spring-webmvc'
+            runtime group: 'javax.servlet', name: 'jstl'
+
+            compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+            compile group: 'javax.validation', name: 'validation-api'
+            compile group: 'org.hibernate', name: 'hibernate-validator'
+
+            providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+        }
+
+        war { archiveName = 'court.war' }
+    }
+
+    if (!subproject.name.contains('5_8')) {
+
+        task buildDocker(type: Docker, dependsOn: build) {
+            push = false
+            applicationName = war.archiveName
+            tag = 'sr4/court-async'
+            tagVersion = 'latest'
+            dockerfile = file('../Dockerfile')
+            doFirst {
+                copy {
+                    from war
+                    into stageDir
+                }
+            }
+        }
+    }
+}
