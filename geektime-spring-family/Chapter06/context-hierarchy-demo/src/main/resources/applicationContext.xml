@@ -6,11 +6,11 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <aop:aspectj-autoproxy/>
+     <aop:aspectj-autoproxy/>
 
     <bean id="testBeanX" class="geektime.spring.web.context.TestBean">
         <constructor-arg name="context" value="Bar" />
     </bean>
 
-    <!--<bean id="fooAspect" class="geektime.spring.web.foo.FooAspect" />-->
+<!--     <bean id="fooAspect" class="geektime.spring.web.foo.FooAspect" />-->
 </beans>

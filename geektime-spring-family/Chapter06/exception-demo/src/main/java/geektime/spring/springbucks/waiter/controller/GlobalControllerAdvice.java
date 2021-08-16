@@ -10,6 +10,7 @@ import javax.validation.ValidationException;
 import java.util.HashMap;
 import java.util.Map;
 
+// 对所有的RestController进行拦截
 @RestControllerAdvice
 public class GlobalControllerAdvice {
     @ExceptionHandler(ValidationException.class)

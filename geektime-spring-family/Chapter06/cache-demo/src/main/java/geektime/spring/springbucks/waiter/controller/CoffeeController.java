@@ -98,6 +98,8 @@ public class CoffeeController {
         return coffeeService.getAllCoffee();
     }
 
+    // 手动设置缓存
+    // 使用postman查看, 查看结果的headers
     @RequestMapping(path = "/{id}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody

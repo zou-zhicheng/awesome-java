@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
 @Slf4j
-public class CustomerServiceApplication {
+public class CustomerServiceApplication extends CustomerRunner{
 
 	public static void main(String[] args) {
 		new SpringApplicationBuilder()
@@ -30,6 +30,7 @@ public class CustomerServiceApplication {
 				.run(args);
 	}
 
+	// jackson就能支持hal
 	@Bean
 	public Jackson2HalModule jackson2HalModule() {
 		return new Jackson2HalModule();

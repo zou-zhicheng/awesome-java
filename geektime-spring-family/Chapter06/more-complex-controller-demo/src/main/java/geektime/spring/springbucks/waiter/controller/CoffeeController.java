@@ -41,6 +41,7 @@ public class CoffeeController {
     @Autowired
     private CoffeeService coffeeService;
 
+    // 对应postman body的x-www-form-urlencoded
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
@@ -54,6 +55,7 @@ public class CoffeeController {
         return coffeeService.saveCoffee(newCoffee.getName(), newCoffee.getPrice());
     }
 
+    // Spring MVC会自动做控制
 //    @PostMapping(path = "/", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 //    @ResponseBody
 //    @ResponseStatus(HttpStatus.CREATED)
@@ -61,6 +63,8 @@ public class CoffeeController {
 //        return coffeeService.saveCoffee(newCoffee.getName(), newCoffee.getPrice());
 //    }
 
+    // 处理文件
+    // 对应postman body的form-data, key列输入file,下拉框中选择File
     @PostMapping(path = "/", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)

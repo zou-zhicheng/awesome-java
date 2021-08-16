@@ -13,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.TimeZone;
 
+//  创建⼀一个带 @Configuration 的 WebMvcConfigurer 配置类
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableCaching

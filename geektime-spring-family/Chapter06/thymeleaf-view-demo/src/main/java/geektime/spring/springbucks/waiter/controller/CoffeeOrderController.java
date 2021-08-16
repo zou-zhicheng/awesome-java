@@ -51,6 +51,7 @@ public class CoffeeOrderController {
         return orderService.createOrder(newOrder.getCustomer(), coffeeList);
     }
 
+    // 呈现在页面上的${coffeeList}
     @ModelAttribute
     public List<Coffee> coffeeList() {
         return coffeeService.getAllCoffee();

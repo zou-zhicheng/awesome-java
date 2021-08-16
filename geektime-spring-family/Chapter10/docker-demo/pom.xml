@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>geektime.spring.springbucks</groupId>
-	<artifactId>waiter-service</artifactId>
+	<artifactId>docker-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>waiter-service</name>
+	<name>docker-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

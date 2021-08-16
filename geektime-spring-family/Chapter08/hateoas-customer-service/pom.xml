@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>geektime.spring.springbucks</groupId>
-	<artifactId>customer-service</artifactId>
+	<artifactId>hateoas-customer-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>customer-service</name>
+	<name>hateoas-customer-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

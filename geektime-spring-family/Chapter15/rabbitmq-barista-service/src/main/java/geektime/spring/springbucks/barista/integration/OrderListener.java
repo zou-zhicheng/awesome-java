@@ -25,6 +25,7 @@ public class OrderListener {
     @Value("${order.barista-prefix}${random.uuid}")
     private String barista;
 
+    // 监听NEW_ORDERS, 收到NEW_ORDERS之后的处理
     @StreamListener(Waiter.NEW_ORDERS)
     public void processNewOrder(Long id) {
         CoffeeOrder o = orderRepository.getOne(id);

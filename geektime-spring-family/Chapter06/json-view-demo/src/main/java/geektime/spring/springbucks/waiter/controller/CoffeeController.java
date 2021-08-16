@@ -62,6 +62,7 @@ public class CoffeeController {
         return coffeeService.saveCoffee(newCoffee.getName(), newCoffee.getPrice());
     }
 
+
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
@@ -111,6 +112,18 @@ public class CoffeeController {
         return coffee;
     }
 
+    /***
+     * 注意这里price的返回类型
+     * @param name
+     * @return
+        {
+        "id": 1,
+        "createTime": "2021-08-10T02:55:17.272+0000",
+        "updateTime": "2021-08-10T02:55:17.272+0000",
+        "name": "espresso",
+        "price": 20.00
+        }
+     */
     @GetMapping(path = "/", params = "name")
     @ResponseBody
     public Coffee getByName(@RequestParam String name) {
