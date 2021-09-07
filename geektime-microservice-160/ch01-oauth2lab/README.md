@@ -31,10 +31,33 @@ oauth2lab
 1. 所有代码仅供学习参考，不是生产级
 2. 代码和ppt采用[Mit license](LICENSE)
 
+# lab01 授权服务器实验
+
+## 授权码授权服务器(authcode-server)
+
+## 简化模式授权服务器(implicit-server)
+
+## 密码模式授权服务器(password-server)
+
+## 客户端模式授权服务器(client-server)
+
+# lab02 Web应用接入授权服务器
+
+# Lab03 授权服务器支持jwt令牌
+
+# Lab04 Android无线应用接入OAuth2
+
+# Lab05 angularjs单页应用接入OAuth2案例实操
+
+# Lab06 OAuth2安全风险CSRF
+
+
+
+# lab07
+
 # 极客时间课程
 
 《微服务架构实战160讲》
 
 <img src="image/course_ad.jpg" alt="drawing" style="width: 480;"/>
-
 

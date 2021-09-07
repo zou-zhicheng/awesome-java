@@ -1,6 +1,9 @@
 基于密码模式+Spring Security OAuth2+JWT的最简授权服务器
 ======
 
+- 自解释
+- 自校验
+
 # 操作方式
 
 ### 1. 启动jwt-authserver，端口8080
@@ -10,6 +13,8 @@
 ### 3. 获取JWT令牌
 
 curl -X POST --user clientapp:112233 http://localhost:8080/oauth/token -H "accept: application/json" -H "content-type: application/x-www-formurlencoded" -d "grant_type=password&username=bobo&password=xyz&scope=read_userinfo"
+
+注意: grant_type=password
 
 响应案例：
 
@@ -36,3 +41,21 @@ curl -X GET http://localhost:8081/api/userinfo -H "authorization: Bearer eyJhbGc
     "email": "bobo@spring2go.com"
 }
 ```
+
+# jwt-authserver
+
+## pom.xml
+
+```xml
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-jwt</artifactId>
+		</dependency>
+```
+
+## OAuth2AuthorizationServer
+
+# jwt-resourceserver
+
+## UserController
+

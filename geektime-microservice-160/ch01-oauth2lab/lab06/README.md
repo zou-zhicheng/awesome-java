@@ -17,3 +17,35 @@ http://localhost:8080/connect/github
 spring.social.github.app-id=YOUR_APP_ID
 spring.social.github.app-secret=YOUR_APP_SECRET
 ```
+
+# 代码
+
+## pom.xml
+
+```xml
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-github</artifactId>
+			<version>1.0.0.M4</version>
+		</dependency>
+```
+
+## RepositoriesController
+
+
+
+# 错误
+
+实验

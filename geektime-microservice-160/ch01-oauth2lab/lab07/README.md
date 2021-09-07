@@ -17,13 +17,13 @@
 
 使用黑客账号`attacker/xyz`进行登录认证，注意请求不带**state**
 
-```
+```shell
 http://localhost:8080/oauth/authorize?client_id=clientapp&redirect_uri=http
 ://localhost:9000/resource&response_type=code&scope=read+write
 ```
 获取授权码返回链接被NoRedirect截获，复制该链接
 
-```
+```shell
 http://localhost:9000/resource?code=So3A96
 ```
 

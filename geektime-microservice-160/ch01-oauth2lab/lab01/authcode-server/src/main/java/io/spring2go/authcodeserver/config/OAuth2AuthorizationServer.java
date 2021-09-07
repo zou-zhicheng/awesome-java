@@ -20,6 +20,7 @@ public class OAuth2AuthorizationServer extends
             .redirectUris("http://localhost:9001/callback")
             // 授权码模式
             .authorizedGrantTypes("authorization_code")
+            // 授权范围
             .scopes("read_userinfo", "read_contacts");
     }
 

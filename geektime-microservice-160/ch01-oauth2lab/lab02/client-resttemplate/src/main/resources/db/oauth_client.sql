@@ -1,5 +1,5 @@
 CREATE DATABASE clientdb;
-CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'test';
+CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'Test@123';
 GRANT ALL PRIVILEGES ON clientdb.* TO 'testuser'@'localhost';
 
 use clientdb;
