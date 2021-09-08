@@ -56,7 +56,3 @@ client/META-INF/app.properties
 
 1. 代码[SimpleApolloConfigDemo](https://github.com/ctripcorp/apollo/blob/master/apollo-demo/src/main/java/com/ctrip/framework/apollo/demo/api/SimpleApolloConfigDemo.java)
 2. 文档[Quick Start](https://github.com/ctripcorp/apollo/wiki/Quick-Start)
-
-
-
-

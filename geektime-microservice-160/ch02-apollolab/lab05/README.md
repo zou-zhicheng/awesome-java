@@ -12,7 +12,7 @@ Spring Boot有一些场景需要配置在更早的阶段注入
 
 
 启动方式：
-```
+```properties
 // 启动
 apollo.bootstrap.enabled=true
 // 注入多个名字空间
@@ -38,7 +38,6 @@ apollo.bootstrap.namespaces = application,TEST1.apollo
 
 1. 代码[SpringBootSampleApplication](https://github.com/ctripcorp/apollo/blob/master/apollo-demo/src/main/java/com/ctrip/framework/apollo/demo/spring/springBootDemo/SpringBootSampleApplication.java)
 2. 文档[Java客户端使用指南](https://github.com/ctripcorp/apollo/wiki/Java%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97)
-
 
 
 

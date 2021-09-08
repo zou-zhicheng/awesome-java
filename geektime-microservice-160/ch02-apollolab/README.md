@@ -27,5 +27,3 @@
 # 极客时间课程
 
 《微服务架构实战160讲》
-
-![微服务架构实战160讲](https://github.com/spring2go/oauth2lab/blob/master/image/course_ad.jpg)
