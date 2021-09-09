@@ -88,7 +88,7 @@ CAT服务器数据源配置文件datasources.xml
 
 CAT服务器配置文件server.xml
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Configuration for development environment-->
