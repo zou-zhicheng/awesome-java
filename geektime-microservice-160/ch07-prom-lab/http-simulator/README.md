@@ -17,6 +17,8 @@ http://SERVICE_URL:8080/prometheus
 
 #### Spike Mode
 
+模拟流量高峰
+
 在Spike模式下，请求数会乘以一个因子(5~15)，延迟加倍
 
 Spike模式可以是`on`, `off`或者`random`, 改变方式：

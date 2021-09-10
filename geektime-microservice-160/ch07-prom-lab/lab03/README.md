@@ -8,7 +8,7 @@
 * 运行Prometheus HTTP Metrics Simulator
 * 运行Prometheus服务器
 
-注意启用`--web.enable-lifecycle`，让Prometheus支持通过web端点动态更新配置
+**注意启用`--web.enable-lifecycle`，让Prometheus支持通过web端点动态更新配置**
 
 #### 2. HttpSimulatorDown告警
 

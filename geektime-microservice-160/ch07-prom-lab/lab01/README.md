@@ -21,13 +21,11 @@ curl -X POST http://SERVICE_URL:8080/spike/random
 
 调整全配置项
 ```yml
-
 # my global config
 global:
   scrape_interval:     5s # Set the scrape interval to every 5 seconds. Default is every 1 minute.
   scrape_timeout: 5s
   evaluation_interval: 5s # Evaluate rules every 5 seconds. The default is every 1 minute.
-
 ```
 
 添加http-simulator Job配置项 
@@ -38,17 +36,14 @@ global:
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'prometheus'
-
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
-
     static_configs:
     - targets: ['localhost:9090']	
   - job_name: 'http-simulator'
     metrics_path: /prometheus
     static_configs:
     - targets: ['localhost:8080']
-
 ```
 
 运行Prometheus

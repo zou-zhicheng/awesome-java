@@ -77,7 +77,8 @@ public class ActivitySimulator implements Runnable {
 	public SimulatorOpts getOpts() {
 		return this.opts;
 	}
-	
+
+	// 核心代码
 	public void simulateActivity() {
 		int requestRate = this.opts.getRequestRate();
 		if (this.giveSpikeMode()) {
